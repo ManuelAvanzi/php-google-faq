@@ -60,29 +60,32 @@ $db = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>google.com/faq</title>
 </head>
 <body>
 
-<?php
-
-foreach ($db as $sectionList) {
-    $title = $sectionList['title'];
-    $paragraphList = $sectionList['paragraphs'];
-
-    echo "<section>";
-    echo "<h2>$title</h2>";
-
-    foreach ($paragraphList as $paragraph) {
-        echo  $paragraph;
-    }
-
-    echo "</section>";
-}
+    <div class="container">
+        <?php
 
 
-?>
+            foreach ($db as $sectionList) {
+                $title = $sectionList['title'];
+                $paragraphList = $sectionList['paragraphs'];
+
+                echo "<section>";
+                echo "<h2>$title</h2>";
+
+                foreach ($paragraphList as $paragraph) {
+                    echo  $paragraph;
+                }
+
+                echo "</section>";
+            }
+
+        ?>
+
+    </div>
         
 </body>
 </html>
