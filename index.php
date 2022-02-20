@@ -65,7 +65,24 @@ $db = [
 </head>
 <body>
 
+<?php
 
+foreach ($db as $sectionList) {
+    $title = $sectionList['title'];
+    $paragraphList = $sectionList['paragraphs'];
+
+    echo "<section>";
+    echo "<h2>$title</h2>";
+
+    foreach ($paragraphList as $paragraph) {
+        echo  $paragraph;
+    }
+
+    echo "</section>";
+}
+
+
+?>
         
 </body>
 </html>
