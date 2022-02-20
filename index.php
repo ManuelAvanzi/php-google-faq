@@ -65,27 +65,28 @@ $db = [
 </head>
 <body>
 
-    <div class="container">
-        <?php
+    
+<?php
+     foreach ($db as $section ) {
 
+        echo '<h2>'.$section['title'].'</h2>';
+                        
 
-            foreach ($db as $sectionList) {
-                $title = $sectionList['title'];
-                $paragraphList = $sectionList['paragraphs'];
-
-                echo "<section>";
-                echo "<h2>$title</h2>";
-
-                foreach ($paragraphList as $paragraph) {
-                    echo  $paragraph;
+        foreach ($section['paragraphs'] as $paragraphKey=>$paragraphValue) {
+            if ($paragraphKey==='list') {
+                echo '<ol>';
+                foreach ($paragraphValue as $elementList) {
+                    echo '<li>'.$elementList.'</li>';
                 }
+                    echo '</ol>';
+            }else {
+                echo '<div>' .$paragraphValue. '</div>';
+                    }
+                }
+    }
+?>
 
-                echo "</section>";
-            }
-
-        ?>
-
-    </div>
+    
         
 </body>
 </html>
